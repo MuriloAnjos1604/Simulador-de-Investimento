@@ -1,0 +1,63 @@
+while True:
+    print("-------------------------------")
+    print("  Seja bem-vindo(a) ao Mybank  ")
+    print("    SIMULADOR DE INVESTIMENTO  ")
+    print("-------------------------------")
+
+    print("Títulos disponíveis: ")
+    print("1 - Tesouro Prefixado 2024")
+    print("2 - Tesouro Prefixado 2026")
+
+    titulo = str(input("Qual título você gostaria de fazer uma simulação: "))
+
+    if titulo == '1':
+        valor_1 = float(input("Qual valor você deseja investir: "))
+        parcelas_1 = float(input("Se você for investir todo mês, qual o valor: "))
+
+        valor_total_1 = (parcelas_1*32)+valor_1
+        valor_bruto_1 = (valor_total_1/11.49)+valor_total_1
+        ir_1 = valor_bruto_1/17.5
+        b3_1 = valor_bruto_1/100
+        valor_liquido_1 = (valor_bruto_1-ir_1)-b3_1
+
+        print("-------------------------------------")
+        print("       RESULTADO DA SIMULAÇÃO        ")
+        print("-------------------------------------")
+        print("Valor inicial invetido: R$ {:.2f}".format (valor_1))
+        print("Aportes de R$ {:.2f} por 32 meses: ".format(parcelas_1))
+        print("Valor total investido: R$ {:.2f}".format(valor_total_1))
+        print("-------------------------------------")
+        print("Valor bruto: R$ {:.2f} ".format(valor_bruto_1))
+        print("I.R.: R$ {:.2f} ".format (ir_1))
+        print("Taxa da B3: R$ {:.2f} ".format(b3_1))
+        print("Valor líquido: R$ {:.2f} ".format(valor_liquido_1))
+    else:
+        valor_2 = float(input("Qual valor você deseja investir: "))
+        parcelas_2 = float(input("Se você for inv estir todo mês, qual o valor: "))
+
+        valor_total_2 = (parcelas_2*50)+valor_2
+        valor_bruto_2 = (valor_total_2/11.67)+valor_total_2
+        ir_2 = valor_bruto_2/17.5
+        b3_2 = valor_bruto_2/50
+        valor_liquido_2 = (valor_bruto_2-ir_2)-b3_2
+        
+
+        print("-------------------------------------")
+        print("    RESULTADO DA SIMULAÇÃO     ")
+        print("-------------------------------------")
+        print("Valor inicial invetido: R$ {:.2f}".format (valor_2))
+        print("Aportes de R$ {:.2f} por 50 meses: ".format(parcelas_2))
+        print("Valor total investido: R$ {:.2f}".format(valor_total_2))
+        print("-------------------------------------")
+        print("Valor bruto: R$ {:.2f} ".format(valor_bruto_2))
+        print("I.R.: R$ {:.2f} ".format (ir_2))
+        print("Taxa da B3: R$ {:.2f} ".format(b3_2))
+        print("Valor líquido: R$ {:.2f} ".format(valor_liquido_2))
+        
+        
+    print("-------------------------------------")
+    opcao = str(input("Deseja realizar outra simulação? s/n: "))
+    if opcao == 'n':
+                 break
+
+print("Programa encerrado")
